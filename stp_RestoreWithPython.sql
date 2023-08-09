@@ -1,0 +1,21 @@
+CREATE procedure [dbo].[stp_RestoreWithPython] (@path varchar(500), @db_name varchar(50) ) as 
+begin
+SET IMPLICIT_TRANSACTIONS OFF
+
+-- VALIDA SE O BANCO JA EXISTE NO AMBIENTE
+IF NOT EXISTS (SELECT NAME FROM sys.sysdatabases where name = @db_name)
+BEGIN
+	RESTORE DATABASE @db_name FROM  DISK = @path WITH  FILE = 1, 
+	MOVE N'Northwind' TO N'D:\SQL_SERVER2019\MSSQL15.SQL2019\MSSQL\DATA\northwnd.mdf',  
+	MOVE N'Northwind_log' TO N'D:\SQL_SERVER2019\MSSQL15.SQL2019\MSSQL\DATA\northwnd.ldf',  NOUNLOAD,  STATS = 5, RECOVERY
+
+	
+END
+ELSE
+BEGIN
+
+-- CASO ELE EXISTA
+RESTORE DATABASE @db_name FROM  DISK = @path WITH
+STATS = 5, REPLACE, RECOVERY
+END
+END

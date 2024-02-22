@@ -1,0 +1,26 @@
+<produtos>
+	<produto>
+		<id>2</id>
+		<nome>Mc Chicken</nome>
+		<quantidade>200</quantidade>
+		<validade>2024-03-30</validade>
+	</produto>
+	<produto>
+		<id>3</id>
+		<nome>Coca-Cola</nome>
+		<quantidade>1500</quantidade>
+		<validade>2024-06-20</validade>
+	</produto>
+	<produto>
+		<id>10</id>
+		<nome>Batata-Frita</nome>
+		<quantidade>800</quantidade>
+		<validade>2026-02-14</validade>
+	</produto>
+	<produto>
+		<id>12</id>
+		<nome>Molho Ranch</nome>
+		<quantidade>12</quantidade>
+		<validade>2024-02-22</validade>
+	</produto>
+</produtos>
